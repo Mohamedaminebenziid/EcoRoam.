@@ -1,0 +1,32 @@
+{# templates/participation/form.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+                <!--=== Tour Details Wrapper ===-->
+                <div class="tour-details-wrapper pt-80">
+                    <!--=== Tour Title Wrapper ===-->
+                    <div class="tour-title-wrapper pb-30 wow fadeInUp">
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <div class="tour-title mb-20">
+                                    <h2>Participate</h2>
+<form action="{{ path('participation_submit') }}" class="body" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br>
+    <label for="id_card">ID Card:</label>
+    <input type="text" id="id_card" name="id_card" required><br>
+    <label for="phone_number">Phone Number:</label>
+    <input type="text" id="phone_number" name="phone_number" required><br>
+    <button type="submit" class="btn btn-raised btn-primary btn-round waves-effect">Submit</button>
+    
+</form>
+</div>
+                                </div>
+                            </div>
+                        </div>
+                         </div>
+                        </div>
+                   
+{% endblock %}

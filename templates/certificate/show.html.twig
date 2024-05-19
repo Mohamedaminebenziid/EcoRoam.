@@ -1,0 +1,38 @@
+{% extends 'dashboard.html.twig' %}
+
+{% block title %}Certificate{% endblock %}
+
+{% block body %}
+    <h1>Certificate</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ certificate.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ certificate.PName }}</td>
+            </tr>
+            <tr>
+                <th>Course_title</th>
+                <td>{{ certificate.CTitle }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ certificate.date }}</td>
+            </tr>
+            <tr>
+                <th>Signature</th>
+                <td>{{ certificate.signature }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_certificate_index') }}">back to list</a>
+
+    <a href="{{ path('app_certificate_edit', {'id': certificate.id}) }}">edit</a>
+
+    {{ include('certificate/_delete_form.html.twig') }}
+{% endblock %}

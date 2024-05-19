@@ -1,0 +1,61 @@
+{% extends 'dashboard.html.twig' %}
+
+ 
+
+{% block title %}Destination index{% endblock %}
+
+{% block body %}
+
+
+    <h3>Destination Table</h3>
+    <div class="row">
+                            <div class="col-md-12">
+                            <table class="table table-bordered" id="editableTable">
+                                <thead>
+                                <tr>
+                                    <th>Id</th>
+                <th>Name</th>
+                <th>Img</th>
+                <th>State</th>
+                <th>Address</th>
+                <th>Prix</th>
+                <th>actions</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        {% for destination in destinations %}
+
+                                <tr >
+                                <td>{{ destination.id }}</td>
+                <td><a href="{{ path('app_destination_show', {'id': destination.id}) }}">{{ destination.name }}</a></td>
+                <td>{{ destination.img }}</td>
+                <td>{{ destination.state }}</td>
+                <td>{{ destination.address }}</td>
+                <td>{{ destination.prix }}</td>
+                                   
+                                    <td>
+                                    <a class="button button-small edit" title="Edit" href="{{ path('app_destination_edit', {'id': destination.id}) }}">
+                                        <i class="zmdi zmdi-edit"></i>
+                                    </a>
+                                    
+                                    <a class="button button-small edit" title="Delete" href="{{ path('app_destination_delete', {'id': destination.id}) }}">
+                                        <i class="zmdi zmdi-delete"></i>
+                                    </a>
+                                    </td>
+                                </tr> 
+                                {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+                                </tbody>
+                                </thread>
+                                </table>
+  <button  class="btn btn-raised btn-primary btn-round waves-effect"><a href="{{ path('app_destination_new') }}">Create</a></button>
+    <button  class="btn btn-raised btn-primary btn-round waves-effect"><a href="{{ path('app_destination_stats') }}">stats</a></button>
+
+                                </div>
+                               
+ 
+    
+{% endblock %}

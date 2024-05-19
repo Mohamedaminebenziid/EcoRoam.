@@ -1,0 +1,27 @@
+ {% extends 'base.html.twig' %}
+
+{% block title %}Course Details{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="course-details-wrapper pt-80">
+        <div class="row">
+            <div class="col-lg-7">
+                <img src="{{ asset('uploads/course/' ~ course.image)}}" class="mb-20 w-100" alt="place image">
+            </div>
+                               
+            <div class="col-md-6">
+                <h3>{{ course.title }}</h3>
+                <p>{{ course.Descrition }}</p>
+                <div class="menu-button d-xl-block d-none">
+                <a href="{{ path('app_certificate_create', {'courseId': course.id}) }}" class="main-btn primary-btn">Get Certificate <i class="fas fa-paper-plane"></i></a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+                               
+

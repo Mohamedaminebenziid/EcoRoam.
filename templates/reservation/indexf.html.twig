@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reservation List{% endblock %}
+
+{% block body %}
+
+<section class="page-banner overlay pt-170 pb-220 bg_cover" style="background-image: url('{{ asset('gowilds/images/bg/page-bg.jpg') }}');
+;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="page-banner-content text-center text-white">
+                    <h1 class="page-title">My Reservations</h1>
+                    <ul class="breadcrumb-link text-white">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active">Reservations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section >
+ <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <!-- Ici s'affichera la liste des destinations -->
+                <div class="destination-list">
+                                <div class="row justify-content-center">
+    <h2>My Reservations </h2>
+
+
+    <table class="table">
+    <thead>
+        <tr>
+            <th>Startdate</th>
+            <th>Enddate</th>
+            <th>Number</th>
+            <th>Totalprice</th>
+            <th>Destination</th>
+            <th>Details</th> <!-- Adding a new column for actions -->
+        </tr>
+    </thead>
+    <tbody>
+    {% for reservation in reservations %}
+        <tr>
+            <td>{{ reservation.startdate ? reservation.startdate|date('Y-m-d') : '' }}</td>
+            <td>{{ reservation.enddate ? reservation.enddate|date('Y-m-d') : '' }}</td>
+            <td>{{ reservation.number }}</td>
+            <td>{{ reservation.totalprice }}</td>
+            <td>{{ reservation.destination.name }}</td>
+            <td>
+                <!-- Adding a link with an icon to the reservation details page -->
+                <a href="{{ path('app_reservation_show', {'id': reservation.id}) }}">
+                    <i class="fa fa-info-circle"></i> <!-- Assuming you are using Font Awesome for icons -->
+                </a>
+            </td>
+        </tr>
+    {% else %}
+        <tr>
+            <td colspan="7">no records found</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+            </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+   
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'dashboard.html.twig' %}
+
+{% block title %}Edit forum{% endblock %}
+
+{% block body %}
+    <h1>Edit forum</h1>
+
+    {{ include('forum/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_forum_index') }}">back to list</a>
+
+    {{ include('forum/_delete_form.html.twig') }}
+{% endblock %}

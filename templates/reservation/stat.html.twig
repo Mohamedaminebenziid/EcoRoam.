@@ -1,0 +1,21 @@
+
+{% block body %}
+    <h1>Statistiques des destinations</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Destination</th>
+                <th>Nombre de réservations</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stat in reservation %}
+                <tr>
+                    <td>{{ stat.destinationName }}</td>
+                    <td>{{ stat.nombreReservations }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

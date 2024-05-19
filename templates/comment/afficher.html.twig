@@ -1,0 +1,75 @@
+
+{% extends 'base.html.twig' %}
+
+ 
+
+{% block title %}comment index{% endblock %}
+
+{% block body %}
+<section class="page-banner overlay pt-170 pb-220 bg_cover" style="background-image: url('{{ asset('gowilds/images/bg/page-bg.jpg') }}');
+;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="page-banner-content text-center text-white">
+                    <h1 class="page-title">Forum</h1>
+                    <ul class="breadcrumb-link text-white">
+                        <li><a href="{{ path('app_home') }}">Home</a></li>
+                        <li class="active">Forum</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <!-- Ici s'affichera la liste des destinations -->
+                <div class="destination-list">
+                                <div class="row justify-content-center">
+    <div class="row">
+    <h1>Comments</h1>
+                            <div class="col-md-12">
+                            <table class="table table-bordered" id="editableTable">
+                                <thead>
+                                <tr>
+                <th>Content</th>
+                <th>Img</th>
+                <th>Rate</th>
+                <th>actions</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        {% for comment in comments %}
+
+                                <tr >
+                <td><a href="{{ path('app_comment_afficher_index', {'id': comment.id}) }}">{{ comment.content }}</a></td>
+                <td>{{ comment.img }}</td>
+                <td>{{ comment.rate }}</td>
+                
+                                   
+                                    <td>
+                                    <a title="Edit" href="{{ path('app_comment_front_edit', {'id': comment.id}) }}">modifier
+                                    </a>
+                                    
+                                    <a title="Delete" href="{{ path('app_comment_delete', {'id': comment.id}) }}">delete
+                                    </a>
+                                    </td>
+                                </tr> 
+                                {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+                                </tbody>
+                                </thread>
+                                </table>
+  <button  class="btn btn-raised btn-primary btn-round waves-effect"><a href="{{ path('app_comment_ajouter') }}">Create</a></button>
+                                </div>
+                                 </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+{% endblock %}

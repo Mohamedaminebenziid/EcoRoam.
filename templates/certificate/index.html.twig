@@ -1,0 +1,50 @@
+{% extends 'dashboard.html.twig' %}
+
+{% block title %}Certificate {% endblock %}
+
+{% block body %}
+    <h1>Certificate Tabel </h1>
+
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered" id="editableTable">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Course_title</th>
+                        <th>Date</th>
+                        <th>Signature</th>
+                        <th>actions</th>
+                    </tr>
+                </thead>
+        <tbody>
+        {% for certificate in certificates %}
+            <tr>
+                <td>{{ certificate.id }}</td>
+                <td><a href="{{ path('app_certificate_show', {'id': certificate.id}) }}">{{ certificate.PName }}</a></td>
+                <td>{{ certificate.CTitle }}</td>
+                <td>{{ certificate.date ? certificate.date|date('Y-m-d') : '' }}</td>
+                <td>{{ certificate.signature }}</td>
+                <td>
+                                    <a class="button button-small edit" title="Edit" href="{{ path('app_certificate_edit', {'id': certificate.id}) }}">
+                                        <i class="zmdi zmdi-edit"></i>
+                                    </a>
+                                     
+                                    <a class="button button-small edit" title="Delete" href="{{ path('app_certificate_delete', {'id': certificate.id}) }}">
+                                        <i class="zmdi zmdi-delete"></i>
+                                    </a>
+                                    </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        </thead>
+    </table>
+
+    <button  class="btn btn-raised btn-primary btn-round waves-effect"><a href="{{ path('app_certificate_new') }}">Create</a></button>
+    </div>
+{% endblock %}

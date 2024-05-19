@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des cours{% endblock %}
+
+{% block body %}
+<section class="page-banner overlay pt-170 pb-220 bg_cover" style="background-image: url('{{ asset('gowilds/images/bg/page-bg.jpg') }}');">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="page-banner-content text-center text-white">
+                    <h1 class="page-title">Cours</h1>
+                    <ul class="breadcrumb-link text-white">
+                        <li><a href="{{ path('app_home') }}">Home</a></li>
+                        <li class="active">Cours</li>
+                    </ul>
+                </div>
+                <div class="form_group">
+                    <span>Recherche</span>
+                    <input type="text" class="form-control rounded-pill" id="searchInput" placeholder="Rechercher....">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container mt-5">
+    {% if course is empty %}
+        <p>Aucun cours disponible pour le moment.</p>
+    {% else %}
+        <div class="row">
+            {% for course in course %}
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="job-item p-4 mb-4" data-search="{{ course.title }}">
+                            {% if course.image %}
+                                <img src="{{ asset('uploads/course/' ~ course.image) }}" class="card-img-top" alt="{{ course.title }}">
+                            {% else %}
+                                <img src="{{ asset('uploads/default.jpg') }}" class="card-img-top" alt="Image par défaut">
+                            {% endif %}
+                            <div class="card-body">
+                                <h5 class="card-title">{{ course.title }}</h5>
+                                <p class="card-text">{{ course.Difficulty }}</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a href="{{ path('app_course_showdetails', {'id': course.id}) }}" class="btn btn-sm btn-outline-secondary">Voir détails</a>
+                                    </div>
+                                </div>
+                                    {# Affichage du code QR avec lien vers la page de détails du cours #}
+                              {#  <a href="{{ path('app_course_showdetails', {'id': course.id}) }}">
+                                    <img src="{{ path('generate_qr_code', {'courseId': course.id}) }}" alt="QR Code">
+                                </a>#}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+
+<script>
+    function filterCards() {
+        const filter = document.getElementById('searchInput').value.toUpperCase();
+        const cards = document.querySelectorAll('.job-item');
+
+        cards.forEach(card => {
+            const content = card.getAttribute('data-search').toUpperCase();
+            const isVisible = content.includes(filter);
+            card.classList.toggle('d-none', !isVisible);
+        });
+    }
+
+    document.getElementById('searchInput').addEventListener('keyup', filterCards);
+</script>
+{% endblock %}

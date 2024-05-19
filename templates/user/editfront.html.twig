@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit My Account{% endblock %}
+
+{% block body %}
+<div class="container">
+
+   <div class="tour-details-wrapper pt-80">
+        <!--=== Tour Title Wrapper ===-->
+        <div class="tour-title-wrapper pb-30 wow fadeInUp">
+            <div class="row">
+                <div class="col-xl-6">
+                    <div class="tour-title mb-20">
+                        <h3 class="title">Edit Profile</h3>
+    {{ form_start(form) }}
+    {{ form_row(form.username) }}
+    {{ form_row(form.email) }}
+        {{ form_row(form.adresse) }}
+
+    {# Add more form fields as needed #}
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    {{ form_end(form) }}
+     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

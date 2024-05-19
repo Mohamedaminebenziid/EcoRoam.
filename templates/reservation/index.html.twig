@@ -1,0 +1,55 @@
+{% extends 'dashboard.html.twig' %}
+
+{% block title %}Reservation index{% endblock %}
+
+{% block body %}
+    <h1>Reservation index</h1>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Startdate</th>
+                <th>Enddate</th>
+                <th>Number</th>
+                <th>Totalprice</th>
+                <th>Status</th>
+                                <th>destination</th>
+
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for reservation in reservations %}
+            <tr>
+                <td>{{ reservation.id }}</td>
+                <td>{{ reservation.startdate ? reservation.startdate|date('Y-m-d') : '' }}</td>
+                <td>{{ reservation.enddate ? reservation.enddate|date('Y-m-d') : '' }}</td>
+                <td>{{ reservation.number }}</td>
+                <td>{{ reservation.totalprice }}</td>
+                <td>{{ reservation.status }}</td>
+                <td>{{ reservation.destination.id }}</td>
+
+                
+                     <td>
+                                    <a class="button button-small edit" title="Edit" href="{{ path('app_reservation_editback', {'id': reservation.id}) }}">
+                                        <i class="zmdi zmdi-edit"></i>
+                                    </a>
+                                    
+                                    <a class="button button-small edit" title="Delete" href="{{ path('app_reservation_deleteback', {'id': reservation.id}) }}">
+                                        <i class="zmdi zmdi-delete"></i>
+                                    </a>
+                                    </td>
+                
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+   
+
+{% endblock %}

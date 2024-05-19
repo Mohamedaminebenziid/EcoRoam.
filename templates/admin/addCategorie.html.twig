@@ -1,0 +1,86 @@
+﻿{% extends 'dashboard.html.twig' %}
+
+{% block title %}EcoRoam{% endblock %}
+
+{% block body %}
+ <div class="container-fluid">
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="card">
+            <div class="header">
+                <h2><strong>Add</strong> categorie</h2>
+                <ul class="header-dropdown">
+                    <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-more"></i> </a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li><a href="javascript:void(0);">Action</a></li>
+                            <li><a href="javascript:void(0);">Another action</a></li>
+                            <li><a href="javascript:void(0);">Something else</a></li>
+                            <li><a href="javascript:void(0);" class="boxs-close">Delete</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="body">
+                <div class="row clearfix">
+                    <div class="col-md-12 col-md-12 col-sm-12"> <b>intitule categorie</b>
+                       {{form_start(formAdd,{'attr': {'novalidate': 'novalidate','method': 'post'}})}}   
+                            <div class="col-sm-6">
+                                <div class="form-group">                                   
+                                    {{ form_widget(formAdd.intitule, { 'attr': {'class':'form-control','placeholder':'name categorie'} } ) }} 
+                                {{form_errors(formAdd.intitule) }} 
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                                                   
+                                    {{ form_widget(formAdd.Add, { 'attr': {'class':'btn btn-primary waves-effect'} } ) }} 
+                             
+                            </div>
+                             {{form_end(formAdd)}}
+                    </div>
+                  
+                </div>
+      
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="card">
+                    <div class="header">
+                        <h2><strong>List</strong> categorie</h2>
+                      
+                    </div>
+                    <div class="body table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    
+                                    <th>Number</th>
+                                    <th>Intitule</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% if categorie is defined and categorie | length > 0 %}
+                            {% for row in  categorie %}
+                                <tr >
+                                   
+                                    <td>{{row.id}}</td>
+                                    <td>{{row.intitule}}</td>
+                                    <td>
+                                    <a  href="{{path('app_edit_categorie',{'id':row.id})}}" class="btn btn-raised btn-primary btn-round waves-effect" type="submit">update</a>
+                                    <a  href="{{path('app_delete_categorie',{'id':row.id})}}"class="btn btn-raised btn-secondary btn-round waves-effect" type="submit">delete</a>
+                                    </td>
+                                    
+                                </tr>
+                              {% endfor %}
+                              {% endif %}
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends 'dashboard.html.twig' %}
+
+{% block title %}Events index{% endblock %}
+
+{% block body %}
+    <h1>Events index</h1>
+
+    <div class="row">
+                            <div class="col-md-12">
+                            <table class="table table-bordered" id="editableTable">
+                                <thead>
+                                <tr>
+                                    <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>State</th>
+                <th>Img</th>
+                
+                <th>description</th>
+                <th>date</th>
+                <th>activities</th>
+                
+                <th>actions</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        {% for event in events %}
+
+                                <tr >
+                                <td>{{ event.id }}</td>
+                <td><a href="{{ path('app_events_show', {'id': event.id}) }}">{{ event.name }}</a></td>
+                <td>{{ event.price }}</td>
+                <td>{{ event.state }}</td>
+                <td>{{ event.img }}</td>
+                <td>{{ event.description }}</td>
+                
+                <td>{{ event.date ? event.date.format(' %d / %m / %y ') : '' }}</td>
+                <td>
+                                <ul>
+                                    {% for activity in event.events %}
+                                    <li>{{ activity.name }}</li> {# Assuming 'name' is a property of the Activity entity #}
+                                    {% endfor %}
+                                </ul>
+                            </td>
+                
+                
+            
+                
+                                   
+                                    <td>
+                                    <a class="button button-small edit" title="Edit" href="{{ path('app_events_edit', {'id': event.id}) }}">
+                                        <i class="zmdi zmdi-edit"></i>
+                                    </a>
+                                    
+                                    <a class="button button-small edit" title="Delete" href="{{ path('app_events_delete', {'id': event.id}) }}">
+                                        <i class="zmdi zmdi-delete"></i>
+                                    </a>
+                                    </td>
+                                </tr> 
+                                {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+                                </tbody>
+                                </thread>
+                                </table>
+  <button  class="btn btn-raised btn-primary btn-round waves-effect"><a href="{{ path('app_events_new') }}">Create</a></button>
+                                </div>
+{% endblock %}
+

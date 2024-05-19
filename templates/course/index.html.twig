@@ -1,0 +1,52 @@
+{% extends 'dashboard.html.twig' %}
+
+{% block title %}Course index{% endblock %}
+
+{% block body %}
+    <h1>Course table</h1>
+
+    <table class="row">
+        <div class="col-md-12">
+        <table class="table table-bordered" id="editableTable">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Duration</th>
+                <th>Difficulty</th>
+                <th>Category</th>
+                <th>Image</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for course in courses %}
+            <tr>
+                <td>{{ course.id }}</td>
+                <td><a href="{{ path('app_course_show', {'id': course.id}) }}">{{ course.title }}</a></td>
+                <td>{{ course.Duration }}</td>
+                <td>{{ course.Difficulty }}</td>
+                <td>{{ course.Category }}</td>
+                <td>{{ course.image }}</td>
+                <td>
+                    <a class="button button-small edit" title="Edit" href="{{ path('app_course_edit', {'id': course.id}) }}">
+                                        <i class="zmdi zmdi-edit"></i>
+                                    </a>
+                                    
+                                    <a class="button button-small edit" title="Delete" href="{{ path('app_course_delete', {'id': course.id}) }}">
+                                        <i class="zmdi zmdi-delete"></i>
+                                    </a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+   <!-- <a href="{{ path('app_course_new') }}">Create new</a>-->
+   <button  class="btn btn-raised btn-primary btn-round waves-effect"><a href="{{ path('app_course_new') }}">Create</a></button>
+</div>
+{% endblock %}

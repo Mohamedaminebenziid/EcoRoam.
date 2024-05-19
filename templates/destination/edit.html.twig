@@ -1,0 +1,12 @@
+{% extends 'dashboard.html.twig' %}
+
+{% block title %}Edit Destination{% endblock %}
+
+{% block body %}
+    <h1>Edit Destination</h1>
+
+    {{ include('destination/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_destination_indextemp') }}">back to list</a>
+
+{% endblock %}

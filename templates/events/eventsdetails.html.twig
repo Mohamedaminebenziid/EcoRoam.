@@ -1,0 +1,94 @@
+{% extends 'base.html.twig' %} 
+
+
+{% block body %}
+<section class="page-banner overlay pt-170 pb-220 bg_cover" style="background-image: url('{{ asset('gowilds/images/bg/page-bg.jpg') }}');
+;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="page-banner-content text-center text-white">
+                    <h1 class="page-title">events</h1>
+                    <ul class="breadcrumb-link text-white">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active">events</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+                <!--=== Tour Details Wrapper ===-->
+                <div class="tour-details-wrapper pt-80">
+                    <!--=== Tour Title Wrapper ===-->
+                    <div class="tour-title-wrapper pb-30 wow fadeInUp">
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <div class="tour-title mb-20">
+                                    <p>Title</p>
+                                    <h3 class="title">{{ events.name }}</h3>
+                                    <p>WHERE?</p>
+                                    <p><i class="far fa-map-marker-alt"></i>{{ events.state }}</p>
+                                </div>
+                                
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="tour-widget-info">
+                                    <div class="info-box mb-20">
+                                        <div class="icon">
+                                            <i class="fal fa-box-usd"></i>
+                                        </div>
+                                        <div class="info">
+                                            <h4><span></span>{{ events.price }}<span>TND</span></h4>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="info-box mb-20">
+    <div class="icon">
+        <i class="fal fa-planet-ringed"></i>
+    </div>
+    <div class="info">
+        
+        <h4>{{ events.date ? events.date.format(' %d / %m / %y ') : '' }}</h4> <!-- Display the date here -->
+    </div>
+    <div class="menu-button d-xl-block d-none">
+        <!-- Additional content -->
+    </div>
+</div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-8">
+                            <!--=== Place Content Wrap ===-->
+                            <div class="place-content-wrap pt-45 wow fadeInUp">
+                                <h3 class="title">Explore the Events</h3>
+                                <p>{{ events.description }}</p>
+                                <div class="row align-items-lg-center">
+                                  
+                                    <div class="col-lg-7">
+                                        {% set imageName = destination.img|split('\\')|last %}
+<img src="{{ asset('uploads/destination/' ~ imageName) }}" alt="Place Image">   
+                                    </div>
+                               
+                                </div>
+                              
+                            </div>
+                            <!-- Button to participate -->
+                        </div>
+                                        <div class="menu-button d-xl-block d-none">
+                                        <a href="{{ path('participation_form') }}" class="main-btn primary-btn">Participate<i
+                                        class="fas fa-paper-plane"></i></a>
+
+                                         </div>
+                    </div>
+                     
+                </div>
+</div>
+    
+
+{% endblock %}

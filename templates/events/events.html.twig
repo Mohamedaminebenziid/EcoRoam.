@@ -1,0 +1,104 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<section class="page-banner overlay pt-170 pb-220 bg_cover" style="background-image: url('{{ asset('gowilds/images/bg/page-bg.jpg') }}');
+;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="page-banner-content text-center text-white">
+                    <h1 class="page-title">Events</h1>
+                    <ul class="breadcrumb-link text-white">
+                        <li><a href="{{ path('app_home') }}">Home</a></li>
+                        <li class="active">Events</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--====== End Breadcrumb Section ======-->
+<!--====== Start Booking Section ======-->
+<section class="booking-form-section pb-100">
+    <div class="container-fluid">
+        <div class="booking-form-wrapper p-r z-2">
+            <form action="https://demo.webtend.net/html/gowilds/index-2.html" class="booking-form-two">
+                <div class="form_group">
+                    <span>Check In</span>
+                    <label><i class="far fa-calendar-alt"></i></label>
+                    <input type="text" class="form_control datepicker" placeholder="Check In">
+                </div>
+                <div class="form_group">
+                    <span>Check Out</span>
+                    <label><i class="far fa-calendar-alt"></i></label>
+                    <input type="text" class="form_control datepicker" placeholder="Check Out">
+                </div>
+                <div class="form_group">
+                    <span>Guest</span>
+                    <label><i class="far fa-user-alt"></i></label>
+                    <input type="text" class="form_control" placeholder="Guest" name="text">
+                </div>
+                <div class="form_group">
+                    <span>Accommodations</span>
+                    <select class="wide">
+                        <option data-display="Accommodations">Accommodations</option>
+                        <option value="01">Classic Tent</option>
+                        <option value="01">Forest Camping</option>
+                        <option value="01">Small Trailer</option>
+                        <option value="01">Tree House Tent</option>
+                        <option value="01">Tent Camping</option>
+                        <option value="01">Couple Tent</option>
+                    </select>
+                </div>
+                <div class="form_group">
+                    <button class="booking-btn">Check Availability <i class="far fa-angle-double-right"></i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<!--====== End Booking Section ======-->
+
+<section class="places-section pb-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-4 col-md-6 col-sm-12 places-column">
+                <!--=== Single Place Item ===-->
+                {% for events in events %}
+
+                <div class="single-place-item mb-60 wow fadeInUp">
+                    <div class="place-img">
+                        {% set imageName = events.img|split('\\')|last %}
+<img src="{{ asset('uploads/destination/' ~ imageName) }}" alt="Place Image">   
+                    </div>
+                    <div class="place-content">
+                        <div class="info">
+                            <ul class="ratings">
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><a href="#">(4.9)</a></li>
+                            </ul>
+                            <h4 class="title"><a href="tour-details.html"></a>{{ events.name }}</h4>
+                            <p class="location"><i class="far fa-map-marker-alt"></i>{{ events.state }}</p>
+                            <p class="price"><i class="fas fa-usd-circle"></i>{{ events.price }}<span class="currency">TND</span>
+                            </p>
+                            <div class="meta">
+                               
+                                <span><a href="{{ path('app_events_showdetails', {'id': events.id}) }}" >Details<i
+                                            class="far fa-long-arrow-right"></i></a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    {% endblock %}

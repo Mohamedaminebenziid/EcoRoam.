@@ -1,0 +1,56 @@
+{% extends 'dashboard.html.twig' %}
+
+{% block title %}Reservation{% endblock %}
+
+{% block body %}
+<div class="container">
+                <!--=== Tour Details Wrapper ===-->
+                <div class="tour-details-wrapper pt-80">
+                    <!--=== Tour Title Wrapper ===-->
+                    <div class="tour-title-wrapper pb-30 wow fadeInUp">
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <div class="tour-title mb-20">
+    <h2>Reservation Added ! Welcome  </h2>
+    </div>
+
+    <table class="table">
+        <tbody>
+           
+
+            <tr>
+                <th>Startdate</th>
+                <td>{{ reservation.startdate ? reservation.startdate|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Enddate</th>
+                <td>{{ reservation.enddate ? reservation.enddate|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Number</th>
+                <td>{{ reservation.number }}</td>
+            </tr>
+            <tr>
+                <th>Totalprice</th>
+                <td>{{ reservation.totalprice }}<span>TND</span></td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ reservation.status }}</td>
+            </tr>
+        </tbody>
+    </table>
+        <h4><a href="{{ path('app_reservation_edit', {'id': reservation.id}) }}">Edit Reservation</a></h4>
+        <h4><a href="{{ path('app_reservation_showpdf', {'id': reservation.id}) }}">pdf</a></h4>
+
+
+          </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+{% endblock %}

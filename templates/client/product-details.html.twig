@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+{% block title %}Description{% endblock %}
+{% block body %}  
+        <!--====== Start Breadcrumb Section ======-->
+        <section class="page-banner overlay pt-170 pb-170 bg_cover" style="background-image: url({{asset('Frondend/assets/images/bg/page-bg.jpg')}});">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="page-banner-content text-center text-white">
+                            <h1 class="page-title">Product Details</h1>
+                            <ul class="breadcrumb-link text-white">
+                                <li><a href="index.html">Home</a></li>
+                                <li class="active">Product Details</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!--====== End Breadcrumb Section ======-->
+        <!--====== Start Shop Details Section ======-->
+        <section class="shop-details-section pt-100 pb-50">
+            <div class="container">
+              {% if Produit is defined %}
+                <div class="product-details-wrapper">
+                    <div class="row align-items-xl-center">
+                        <div class="col-lg-6">
+                            <!--=== Product Gallery ===-->
+                            <div class="product-gallery-area mb-50 wow fadeInLeft">
+                                <div class="product-big-slider mb-30">
+                                
+                                    <div class="product-img">
+                                        <a href="#" class="img-popup"><img src="{{ asset('uploads/imagesProduits/'~ Produit.image) }}" alt="Product"></a>
+                                    </div>
+                                </div>
+                         
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="product-info mb-50 pl-lg-70 wow fadeInRight">
+                                <h4 class="title">{{ Produit.intitule}}</h4>
+                                <ul class="ratings">
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><a href="#">4.9(Customer Reviews)</a></li>
+                                </ul>
+                                <span class="price"><span class="currency"></span>{{ Produit.prix}} DT</span>
+                                <p>{{ Produit.description}}</p>
+                               
+                                <div class="product-cart mt-20 mb-30">
+                                    <ul>
+                                      
+                                        <li><a href="{{path('cart_add',{id: Produit.id})}}" class="main-btn primary-btn">Add to cart<i class="far fa-paper-plane"></i></a></li>
+                                    </ul>
+                                </div>
+                                <ul class="product-meta pb-35 mb-40">
+                                    <li><span>Category </span><a href="#">{{ Produit.categorie}}</a></li>
+                                   
+                                </ul>
+                                <ul class="social-link">
+                                    <li><span>Share</span></li>
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+                {% endif %}
+            </div>
+        </section><!--====== End Shop Details Section ======-->
+        <!--====== Start Recent Product Section ======-->
+  
+        <!--====== Start Footer ======-->
+{% endblock %}

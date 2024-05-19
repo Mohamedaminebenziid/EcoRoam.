@@ -1,0 +1,44 @@
+
+{% block title %}Reservation{% endblock %}
+
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Resume</title>
+</head>
+    <h2>Reservation Added ! Welcome  </h2>
+    <table class="table">
+        <tbody>
+           
+
+            <tr>
+                <th>Startdate</th>
+                <td>{{ reservation.startdate ? reservation.startdate|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Enddate</th>
+                <td>{{ reservation.enddate ? reservation.enddate|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Number</th>
+                <td>{{ reservation.number }}</td>
+            </tr>
+            <tr>
+                <th>Totalprice</th>
+                <td>{{ reservation.totalprice }}<span>TND</span></td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ reservation.status }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+          
+
+
+
+{% endblock %}

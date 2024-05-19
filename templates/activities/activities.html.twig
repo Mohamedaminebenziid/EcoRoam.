@@ -1,0 +1,104 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+<section class="page-banner overlay pt-170 pb-220 bg_cover" style="background-image: url('{{ asset('gowilds/images/bg/page-bg.jpg') }}');">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="page-banner-content text-center text-white">
+                    <h1 class="page-title">Activities</h1>
+                    <ul class="breadcrumb-link text-white">
+                        <li><a href="{{ path('app_home') }}">Home</a></li>
+                        <li class="active">Activities</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--====== End Breadcrumb Section ======-->
+<!--====== Start Booking Section ======-->
+
+<div class="container"> <!-- Container added here -->
+    <div class="row mb-4">
+        <div class="col position-relative">
+            <div class="input-group">
+                <input type="text" class="form-control search-input" placeholder="Search Application" aria-label="Search Application" aria-describedby="searchIcon" id="searchapplication">
+                <div class="input-group-append">
+                    <span class="input-group-text" id="searchIcon"><i class="bi bi-search"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- End of container -->
+
+<!--====== End Booking Section ======-->
+
+<section class="places-section pb-100">
+    <div class="container"> <!-- Container added here -->
+        <div class="row justify-content-center">
+            <div class="col-xl-4 col-md-6 col-sm-12 places-column">
+                <!--=== Single Place Item ===-->
+                {% for activities in activities %}
+                <div class="single-place-item mb-60 wow fadeInUp">
+                    <div class="place-img">
+                        {% set imageName = activities.img|split('\\')|last %}
+                        <img src="{{ asset('uploads/activities/' ~ imageName) }}" alt="Place Image">
+
+
+
+
+
+                    </div>
+                    <div class="place-content">
+                        <div class="info">
+                            <ul class="ratings">
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><a href="#">(4.9)</a></li>
+                            </ul>
+                            <h4 class="title"><a href="tour-details.html"></a>{{ activities.name }}</h4>
+                            <p class="location"><i class="far fa-map-marker-alt"></i>{{ activities.state }}</p>
+                            <p class="price"><i class="fas fa-usd-circle"></i>{{ activities.price }}<span class="currency">TND</span></p>
+                            <div class="meta">
+                                <span><a href="{{ path('app_activities_showdetails', {'id': activities.id}) }}">Details<i class="far fa-long-arrow-right"></i></a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div> <!-- End of container -->
+</section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        // Function to perform the search based on the specified keyword
+        function searchApplication(keyword) {
+            $(".places-section .single-place-item").each(function () {
+                var found = false;
+                $(this).find(".info").children().each(function () {
+                    if ($(this).text().toLowerCase().includes(keyword.toLowerCase())) {
+                        found = true;
+                        return false; // Exit the loop
+                    }
+                });
+                $(this).toggle(found); // Show/hide the card based on search result
+            });
+        }
+
+        // Event handler for the search input
+        $("#searchapplication").on("keyup", function () {
+            var searchText = $(this).val();
+            searchApplication(searchText);
+        });
+    });
+</script>
+
+{% endblock %}

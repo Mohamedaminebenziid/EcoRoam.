@@ -1,0 +1,129 @@
+ {% extends 'base.html.twig' %}
+ {% block body %}
+
+ <body>
+
+        <!--====== Start Preloader ======-->
+        
+        </header><!--====== End Area ======-->
+        <!--====== Start Hero Section ======-->
+        <section class="hero-section">
+            <!--=== Hero Wrapper ===-->
+            <div class="hero-wrapper-four">
+                <div class="shape"><span><img src="{{asset ('gowilds/images/hero/map.png')}}" alt=""></span></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-7">
+                            <!--=== Hero Content ===-->
+                            <div class="hero-content">
+                                <span class="sub-title wow fadeInUp" data-wow-delay=".3s">Welcome to EcoRoam</span>
+                                <h1 class="wow fadeInDown" data-wow-delay=".5s">Explore Dream
+                                    Activities & Detinations</h1>
+                                    <br>
+                                    <h3 style="color: green;">START YOUR <span style="color: black;">JOURNEY</span> NOW!</h3>
+
+                                <!--=== Hero Search ===-->
+                                
+                                      
+                                <div class="avatar-box wow fadeInUp" data-wow-delay=".75s">
+                                    <img src="assets/images/about/avater.png" alt="">
+                                    <span>35+ People booked their dream place</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 d-xl-block d-none">
+                            <div class="hero-image wow fadeInRight" data-wow-delay=".8s">
+                                <img src="{{asset ('gowilds/images/hero/hero-four_img-1.jpg')}}" alt="hero image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!--====== End Hero Section ======-->
+        <!--====== Start Features Section ======-->
+        
+        <!--=== Start What We Section ===-->
+        <section class="who-we-section pt-100 pb-50">
+            <div class="container">
+                <div class="row align-items-xl-center">
+                    <div class="col-xl-5 order-2 order-xl-1">
+                        <!--=== We Image Box ===-->
+                        <div class="we-image-box text-center text-xl-left pr-lg-30 mb-50 wow fadeInLeft">
+                            <img src="{{asset ('gowilds/images/gallery/we-6.jpg')}}" class="radius-top-left-right-288" alt="What We Image">
+                        </div>
+                    </div>
+                    <div class="col-xl-7 order-1 order-xl-2">
+                        <!--=== We Content Box ===-->
+                        <div class="we-contnet-box mb-20 wow fadeInRight">
+                            <!--=== Section Title ===-->
+                            <div class="section-title mb-45">
+                                <span class="sub-title">My Account</span>
+                                <h2>Great Opportunity For
+                                    Adventure & Travels</h2>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <!--=== Fancy Icon Box ===-->
+                                    <div class="fancy-icon-box-three mb-30">
+                                        <div class="icon">
+                                            <i class="flaticon-camping"></i>
+                                        </div>
+                                        <div class="text">
+                                            <h5 class="title">Edit Account</h5>
+                                            {% if app.user %}
+    {# Check if the user is authenticated #}
+    {% set userId = app.user.id %}
+    {# Get the user's ID #}
+                                            <a href="{{ path('app_user_editfront', {'id': userId}) }}
+" class="btn-link"> <i class="far fa-long-arrow-right"></i></a>
+                                        {% endif %}
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <!--=== Fancy Icon Box ===-->
+                                    <div class="fancy-icon-box-three mb-30">
+                                        <div class="icon">
+                                            <i class="flaticon-biking-mountain"></i>
+                                        </div>
+                                        <div class="text">
+                                            <h5 class="title">Choose Your Destination</h5>
+                                            <a href="{{ path('app_destination_indextemp') }}" class="btn-link">Read More <i class="far fa-long-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <!--=== Fancy Icon Box ===-->
+                                    <div class="fancy-icon-box-three mb-30">
+                                        <div class="icon">
+                                            <i class="flaticon-fishing-2"></i>
+                                        </div>
+                                        <div class="text">
+                                            <h5 class="title">Choose Your activity</h5>
+                                            <a href="{{ path('app_activities_indextemp') }}" class="btn-link">Read More <i class="far fa-long-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                 <div class="col-md-6">
+                                    <!--=== Fancy Icon Box ===-->
+                                    <div class="fancy-icon-box-three mb-30">
+                                        <div class="icon">
+                                            <i class="flaticon-caravan"></i>
+                                        </div>
+                                        <div class="text">
+                                            <h5 class="title">Events</h5>
+                                            <a href="{{ path('app_events_indextemp') }}" class="btn-link">Read More <i class="far fa-long-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!--=== End What We Section ===-->
+        <!--====== Start Service Section ======-->
+       
+    </body>
+          {% endblock %}

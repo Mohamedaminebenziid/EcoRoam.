@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}State-wise Activity Statistics{% endblock %}
+
+{% block body %}
+    <h1>State-wise Activity Statistics</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>State</th>
+                <th>Number of Activities</th>
+                <th>Percentage of Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for state, count in stateStats %}
+                <tr>
+                    <td>{{ state }}</td>
+                    <td>{{ count }}</td>
+                    <td>{{ statePercentages[state] }}%</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p>Most common state: {{ mostCommonState }}</p>
+{% endblock %}

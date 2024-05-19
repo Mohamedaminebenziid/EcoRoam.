@@ -1,0 +1,83 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+destination_new:
+    path: /destination/new
+    controller: App\Controller\DestinationController::new
+
+
+destination_show:
+    path: /destination/destinations
+    controller: App\Controller\DestinationController::showDest
+
+reservation_create:
+    path: /reservation/create/{destinationId}
+    controller: App\Controller\ReservationController::create
+
+app_login:
+    path: /login
+    controller: App\Controller\SecurityController::login
+
+generate_pdf:
+    path: /generate-pdf
+    controller: App\Controller\PdfController::generatePdf
+
+activities_new:
+    path: /activities/new
+    controller: App\Controller\ActivitiesController::new
+
+events_new:
+    path: /events/new
+    controller: App\Controller\EventsController::new
+    
+activities_show:
+    path: /activities/activities
+    controller: App\Controller\ActivitiesController::showDest   
+
+events_show:
+    path: /events/events
+    controller: App\Controller\EventsController::showDest  
+
+app_activities_visit_counts:
+    path: /visit-counts
+    controller: App\Controller\ActivitiesController::visitCounts
+
+app_events_search:
+    path: /search
+    controller: App\Controller\EventsController::search
+    methods: ['GET']
+
+participation_submit:
+    path: /participation/submit
+    controller: App\Controller\ParticipationController::handleParticipation
+    methods: [POST]
+
+thank_you:
+    path: /thank-you
+    controller: App\Controller\ParticipationController::thankYou
+
+participation_form:
+    path: /participation/form
+    controller: App\Controller\ParticipationController::showForm
+
+course_new:
+    path: /course/new
+    controller: App\Controller\CourseController::new
+
+course_edit:
+    path: /course/edit
+    controller: App\Controller\CourseController::edit
+
+course_show:
+    path: /course/courses
+    controller: App\Controller\CourseController::showCourse
+get_certificate:
+    path: '/certificate/{id}'
+    controller: 'App\Controller\CertificateController::getCertificate'
+certificate_create:
+    path: /certificate/create/{courseId}
+    controller: App\Controller\CertificateController::create
+coursedetails:
+    path: '/course/{id}'
+    controller: App\Controller\CourseController::courseDetails
+

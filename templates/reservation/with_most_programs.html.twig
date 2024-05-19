@@ -1,0 +1,29 @@
+{% extends 'dashboard.html.twig' %}
+
+{% block title %}Coach stats{% endblock %}
+
+{% block body %}
+
+{% if coachProgramCounts is not empty %}
+    <h2>Best Destinations Stats</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Destinations sorted</th>
+                <th>Number of Reservation</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for coachName, numPrograms in coachProgramCounts %}
+                <tr>
+                    <td>{{ coachName }}</td>
+                    <td>{{ numPrograms }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>No programs found.</p>
+{% endif %}
+
+{% endblock %}

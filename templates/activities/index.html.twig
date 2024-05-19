@@ -1,0 +1,58 @@
+{% extends 'dashboard.html.twig' %}
+
+{% block title %}Activities index{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ asset('bundles/mercuryseriesflashy/css/flashy.css') }}">
+ <script src="//code.jquery.com/jquery.js"></script>
+ <script src="{{ asset('bundles/mercuryseriesflashy/js/flashy.js') }}"></script>
+
+    <h3>Activities Table</h3>
+<div class="row">
+                            <div class="col-md-12">
+                            <table class="table table-bordered" id="editableTable">
+                                <thead>
+                                <tr>
+                                    <th>Id</th>
+                <th>Name</th>
+                <th>Img</th>
+                <th>State</th>
+                <th>description</th>
+                <th>Price</th>
+                <th>actions</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        {% for activity in activities %}
+
+                                <tr >
+                                <td>{{ activity.id }}</td>
+                <td><a href="{{ path('app_activities_show', {'id': activity.id}) }}">{{ activity.name }}</a></td>
+                <td>{{ activity.img }}</td>
+                <td>{{ activity.state }}</td>
+                <td>{{ activity.description }}</td>
+                <td>{{ activity.price }}</td>
+                
+                                   
+                                    <td>
+                                    <a class="button button-small edit" title="Edit" href="{{ path('app_activities_edit', {'id': activity.id}) }}">
+                                        <i class="zmdi zmdi-edit"></i>
+                                    </a>
+                                    
+                                    <a class="button button-small edit" title="Delete" href="{{ path('app_activities_delete', {'id': activity.id}) }}">
+                                        <i class="zmdi zmdi-delete"></i>
+                                    </a>
+                                    </td>
+                                </tr> 
+                                {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+                                </tbody>
+                                </thread>
+                                </table>
+  <button  class="btn btn-raised btn-primary btn-round waves-effect"><a href="{{ path('app_activities_new') }}">Create</a></button>
+                                </div>
+                                {{ include('@MercurySeriesFlashy/flashy.html.twig') }}
+{% endblock %}

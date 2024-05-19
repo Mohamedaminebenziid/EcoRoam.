@@ -1,0 +1,15 @@
+<ul class="gowilds-pagination wow fadeInUp text-center">
+    {% if Produit.pages > 1 %}
+        {% if Produit.page > 1 %}
+            <li><a href="{{ path('app_shop', {'page': Produit.page - 1}) }}"><i class="far fa-arrow-left"></i></a></li>
+        {% endif %}
+
+        {% for page in 1..Produit.pages %}
+            <li><a href="{{ path('app_shop', {'page': page}) }}" class="{{ Produit.page == page ? 'active' : '' }}">{{ page }}</a></li>
+        {% endfor %}
+
+        {% if Produit.page < Produit.pages %}
+            <li><a href="{{ path('app_shop', {'page': Produit.page + 1}) }}"><i class="far fa-arrow-right"></i></a></li>
+        {% endif %}
+    {% endif %}
+</ul>
