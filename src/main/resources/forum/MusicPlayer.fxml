@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="334.0" prefWidth="501.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controller.forum.MusicPlayer">
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="root" stylesheets="@stu.css" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Simple Music Player " textFill="#fcfcfc">
+               <font>
+                  <Font name="System Bold" size="40.0" />
+               </font>
+            </Label>
+            <Label fx:id="chooseMusic" onMouseClicked="#chooseMusic" text="Choose your music">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5038204886128733" centerY="0.7234848340352376" radius="0.5">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.9882352948188782" green="0.9882352948188782" blue="0.9882352948188782" opacity="0.8700000047683716" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9882352948188782" green="0.9882352948188782" blue="0.9882352948188782" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="75.0" prefWidth="502.0" spacing="10.0">
+               <children>
+                  <Button mnemonicParsing="false" onMouseClicked="#Play" text="Play">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#Pause" text="Pause">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#Stop" text="Stop">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

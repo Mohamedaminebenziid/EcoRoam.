@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="230.0" prefWidth="325.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controller.course.coursecard">
+    <children>
+        <BorderPane prefHeight="193.0" prefWidth="255.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <center>
+                <StackPane onMouseClicked="#handleCardClick" prefHeight="229.0" prefWidth="294.0" style="-fx-background-color: #F0BE86; -fx-background-radius: 15;">
+                    <children>
+                        <!-- Image -->
+                        <ImageView fx:id="course_image" fitHeight="153.0" fitWidth="262.0" onMouseClicked="#handleImageClick" pickOnBounds="true" preserveRatio="true" StackPane.alignment="BOTTOM_CENTER">
+                            <StackPane.margin>
+                                <Insets bottom="10.0" />
+                            </StackPane.margin>
+                        </ImageView>
+                        <!-- Card Content -->
+                        <VBox alignment="TOP_LEFT" prefHeight="295.0" prefWidth="494.0" style="-fx-padding: 10;">
+                            <children>
+                                <!-- Course Title -->
+                                <Label fx:id="course_title" contentDisplay="CENTER" onMouseClicked="#handleNameClick" prefHeight="27.0" prefWidth="152.0" text="course">
+                                    <font>
+                                        <Font name="Arial Black" size="18.0" />
+                                    </font>
+                                </Label>
+                                <!-- Price -->
+                                <HBox alignment="CENTER_LEFT" spacing="5" style="-fx-background-color: #DAAB3A; -fx-background-radius: 5;" />
+                            </children>
+                        </VBox>
+                    </children>
+                </StackPane>
+            </center>
+            <!-- Border -->
+            <bottom>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="1.0" stroke="#143c7b" strokeWidth="2.0" />
+            </bottom>
+        </BorderPane>
+    </children>
+</AnchorPane>

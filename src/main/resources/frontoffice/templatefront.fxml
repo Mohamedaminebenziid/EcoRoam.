@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane prefHeight="138.0" prefWidth="800" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controller.templatefront">
+    <!-- Header -->
+    <top>
+        <VBox prefHeight="94.0" prefWidth="800.0" spacing="10" style="-fx-background-color: #004D40; -fx-padding: 20px;">
+            <!-- Logo -->
+            <ImageView>
+                <!-- Add your logo image -->
+            </ImageView>
+            <!-- Agency Name and Slogan -->
+            <HBox spacing="20">
+                <Label style="-fx-text-fill: white; -fx-font-size: 36px;" text="Ecoroam" />
+                <Label alignment="CENTER" opacity="0.78" prefHeight="66.0" prefWidth="202.0" style="-fx-text-fill: white;" text="Explore the world sustainably!" />
+            </HBox>
+            <!-- Navigation Menu -->
+            <HBox spacing="20" style="-fx-background-color: #226D68; -fx-background-radius: 10;">
+                <Button style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 16px;" text="Home" />
+                <Button onAction="#todest" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 16px;" text="Destinations" />
+                <Button onAction="#toact" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 16px;" text="Activities" />
+                <Button onAction="#toevt" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 16px;" text="Events" />
+            <Button onAction="#tocorse" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 16px;" text="Course" />
+            <Button onAction="#toshop" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 16px;" text="Shop" />
+            <Button onAction="#toforum" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 16px;" text="Forum" />
+            </HBox>
+        </VBox>
+    </top>
+</BorderPane>

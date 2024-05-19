@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="tn.esprit.controller.user.forgetpwdcontroller"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <children>
+        <!-- Contenu à gauche -->
+        <AnchorPane prefHeight="400.0" prefWidth="300.0" style="-fx-background-color: #009213;">
+            <children>
+                <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="50.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@logo.png" />
+                    </image>
+                </ImageView>
+                <Button layoutX="100.0" layoutY="300.0" mnemonicParsing="false" onAction="#returnSignIn" text="SIGN IN" />
+            </children>
+        </AnchorPane>
+
+        <!-- Contenu à droite -->
+        <AnchorPane prefHeight="400.0" prefWidth="300.0" style="-fx-background-color: #ffffff;"
+                    AnchorPane.leftAnchor="300.0">
+            <children>
+                <Text layoutX="100.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reset your Password">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Text>
+                <TextField fx:id="emailId" layoutX="50.0" layoutY="125.0" minWidth="200.0" promptText="Your email" style="-fx-border-radius: 10; -fx-background-color: #ffffff; -fx-border-color: #c0c0c0; -fx-border-width: 2;">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </TextField>
+                <Button layoutX="50.0" layoutY="200.0" minWidth="200.0" mnemonicParsing="false" onAction="#resetPass" style="-fx-background-color: #f1e5e5; -fx-background-radius: 45;" text="Send Email">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

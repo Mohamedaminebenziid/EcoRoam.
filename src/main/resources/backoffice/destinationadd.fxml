@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controller.destination.Destinationadd">
+
+   <children>
+
+      <fx:include source="dashboardhome.fxml" />
+
+      <TextField fx:id="idnamedest" layoutX="327.0" layoutY="112.0" promptText="Destination name " />
+      <TextField fx:id="idadressedest" layoutX="327.0" layoutY="235.0" promptText="Destination Adresse" />
+      <TextField fx:id="idpricedest" layoutX="327.0" layoutY="275.0" promptText="price" />
+      <Button layoutX="532.0" layoutY="386.0" mnemonicParsing="false" onAction="#destinationadd" prefHeight="26.0" prefWidth="92.0" style="-fx-background-color: #000000; -fx-background-radius: 50;" text="Ajouter" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <TextField fx:id="iddescdest" layoutX="327.0" layoutY="317.0" promptText="Description" />
+      <Label layoutX="327.0" layoutY="23.0" prefHeight="71.0" prefWidth="344.0" text="ADD A DESTINATION" textFill="#100f3b">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <Button layoutX="634.0" layoutY="386.0" mnemonicParsing="false" onAction="#todestinationlist" prefHeight="26.0" prefWidth="92.0" style="-fx-background-color: #000000; -fx-background-radius: 50;" text="List" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="SelectImage" layoutX="327.0" layoutY="154.0" mnemonicParsing="false" onAction="#handleSelectImage" prefHeight="26.0" prefWidth="150.0" text="Choose your photo" />
+      <Label fx:id="imageURLLabel" layoutX="490.0" layoutY="154.0" prefHeight="26.0" prefWidth="150.0" />
+      <ComboBox fx:id="idstatedest" layoutX="327.0" layoutY="189.0" prefWidth="150.0" promptText="Destination State" visibleRowCount="24" />
+   </children>
+</AnchorPane>

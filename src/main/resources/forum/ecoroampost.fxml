@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="997.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controller.forum.EcoroamPost">
+   <children>
+      <HBox layoutX="-1.0" prefHeight="78.0" prefWidth="906.0">
+         <children>
+            <ImageView fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/ecoroam.png" />
+               </image>
+            </ImageView>
+            <Label prefHeight="86.0" prefWidth="222.0" text="Ecoroam">
+               <font>
+                  <Font name="Segoe UI Semibold" size="44.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <ScrollPane layoutX="14.0" layoutY="90.0" prefHeight="620.0" prefWidth="361.0" style="-fx-background-color: transparent;">
+         <content>
+            <VBox prefHeight="583.0" prefWidth="369.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="143.0" prefWidth="318.0" spacing="10.0">
+                     <children>
+                        <ImageView fx:id="imgProfile" fitHeight="59.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/woman.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="username" prefHeight="27.0" prefWidth="172.0" text="username">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="56.0" prefWidth="335.0" spacing="10.0" />
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="69.0" prefHeight="56.0" prefWidth="335.0" spacing="10.0" />
+                  <HBox alignment="CENTER" prefHeight="56.0" prefWidth="335.0" spacing="10.0" />
+                  <HBox alignment="CENTER" prefHeight="56.0" prefWidth="335.0" spacing="10.0" />
+                  <HBox alignment="CENTER" prefHeight="102.0" prefWidth="335.0" spacing="10.0">
+                     <children>
+                        <ImageView fitHeight="45.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/destination.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="27.0" prefWidth="183.0" text="Destinations">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="335.0" spacing="10.0">
+                     <children>
+                        <ImageView fitHeight="45.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/calendar.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="27.0" prefWidth="191.0" text="Activities &amp; Events">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="335.0" spacing="10.0">
+                     <children>
+                        <ImageView fitHeight="45.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/security.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="27.0" prefWidth="194.0" text="Educational Content">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="335.0" spacing="10.0">
+                     <children>
+                        <ImageView fitHeight="45.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/shopping-cart.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="27.0" prefWidth="189.0" text="Shop">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="101.0" prefWidth="366.0" spacing="10.0">
+                     <children>
+                        <ImageView fx:id="gotopost" fitHeight="45.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/chat.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="27.0" prefWidth="191.0" text="Forum">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="335.0" spacing="10.0" />
+                  <HBox alignment="CENTER" prefHeight="101.0" prefWidth="335.0" spacing="10.0">
+                     <children>
+                        <ImageView fx:id="playMusic" fitHeight="27.0" fitWidth="36.0" onMouseClicked="#setPlayMusic" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/spotify (1).png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="48.0" prefWidth="233.0" text="Do you want to enjoy some music">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="10.0" />
+                           </font>
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="0.08187134563922882" green="0.7894737124443054" blue="0.5064327716827393" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.09473684430122375" green="0.004912280477583408" blue="0.004912280477583408" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+      <HBox layoutX="315.0" layoutY="62.0" prefHeight="632.0" prefWidth="678.0">
+         <children>
+            <Pane prefHeight="626.0" prefWidth="0.0" />
+            <Pane prefHeight="632.0" prefWidth="691.0" styleClass="root" stylesheets="@styl.css">
+               <children>
+                  <HBox layoutX="2.0" prefHeight="151.0" prefWidth="669.0" styleClass="post-background" stylesheets="@style.css">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="151.0" prefWidth="647.0">
+                           <children>
+                              <ImageView fx:id="imgeProfile" fitHeight="47.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/woman.png" />
+                                 </image>
+                              </ImageView>
+                              <TextField fx:id="tfimage" prefHeight="25.0" prefWidth="60.0" promptText="Image" />
+                              <ImageView fitHeight="63.0" fitWidth="26.0" onMouseClicked="#uploadimage" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@/forum/img/image-gallery.png" />
+                                 </image>
+                              </ImageView>
+                              <VBox prefHeight="82.0" prefWidth="298.0" spacing="40.0">
+                                 <children>
+                                    <TextField fx:id="tfpost" prefHeight="25.0" prefWidth="262.0" promptText="whats in your mind...... ?" styleClass="text-field" stylesheets="@stu.css">
+                                       <VBox.margin>
+                                          <Insets top="30.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <TextField fx:id="tfhashtag" prefHeight="12.0" prefWidth="202.0" promptText="HashTag" styleClass="text-field" stylesheets="@stu.css" />
+                                 </children>
+                              </VBox>
+                              <ComboBox fx:id="cbvisibilite" prefHeight="25.0" prefWidth="103.0" promptText="Visibilite" styleClass="combo-box">
+                                 <HBox.margin>
+                                    <Insets right="20.0" />
+                                 </HBox.margin>
+                              </ComboBox>
+                              <ImageView fx:id="addpost" fitHeight="27.0" fitWidth="36.0" onMouseClicked="#AddPoste" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/envoyer.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="390.0" layoutY="518.0" prefHeight="100.0" prefWidth="200.0" />
+                  <ScrollPane layoutX="10.0" layoutY="194.0" prefHeight="438.0" prefWidth="656.0">
+                     <content>
+                        <GridPane fx:id="grid">
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </content>
+                  </ScrollPane>
+                  <ComboBox fx:id="cbtri" layoutX="390.0" layoutY="160.0" prefWidth="150.0" promptText="Tri" />
+                  <Button layoutX="564.0" layoutY="160.0" mnemonicParsing="false" onAction="#tri" text="Tri" />
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="tn.esprit.controller.user.Userinfo"
+            prefHeight="400.0" prefWidth="600.0" stylesheets="Login.css">
+
+<children>
+    <TextField fx:id="usereamiltextfiled" layoutX="139.0" layoutY="75.0" prefHeight="41.0" prefWidth="434.0" promptText="usereamil" />
+    <TextField fx:id="usernametextfiled" layoutX="139.0" layoutY="126.0" prefHeight="41.0" prefWidth="434.0" promptText="username" />
+    <TextField fx:id="userphonetextfiled" layoutX="138.0" layoutY="183.0" prefHeight="41.0" prefWidth="434.0" promptText="userphone" />
+    <TextField fx:id="userrolesextfiled" layoutX="133.0" layoutY="331.0" prefHeight="41.0" prefWidth="434.0" promptText="userroles" />
+    <TextField fx:id="userpasswordtextfiled" layoutX="135.0" layoutY="380.0" prefHeight="41.0" prefWidth="434.0" promptText="password" />
+    <Label layoutX="37.0" layoutY="291.0" />
+    <Label layoutX="26.0" layoutY="343.0" />
+    <Label layoutX="28.0" layoutY="397.0" />
+    <Button fx:id="update" layoutX="97.0" layoutY="478.0" mnemonicParsing="false" onAction="#update" prefHeight="25.0" prefWidth="203.0" text="Update profil">
+        <font>
+            <Font name="Georgia Bold" size="14.0" />
+        </font>
+    </Button>
+    <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#back" text="SKIP">
+        <font>
+            <Font name="System Bold" size="14.0" />
+        </font>
+    </Button>
+    <Button fx:id="Disable" layoutX="350.0" layoutY="478.0" mnemonicParsing="false" onAction="#Disable" prefHeight="25.0" prefWidth="233.0" text="Disable account">
+        <font>
+            <Font name="Georgia Bold" size="14.0" />
+        </font>
+    </Button>
+
+    <Label layoutX="175.0" layoutY="14.0" prefHeight="41.0" prefWidth="412.0" text="      UPDATE PROFILE">
+        <font>
+            <Font name="Georgia Bold" size="36.0" />
+        </font>
+    </Label>
+    <Label layoutX="26.0" layoutY="82.0" prefHeight="23.0" prefWidth="83.0" text="EMAIL">
+        <font>
+            <Font name="System Bold" size="18.0" />
+        </font>
+    </Label>
+    <Label layoutX="23.0" layoutY="133.0" prefHeight="27.0" prefWidth="61.0" text="NAME">
+        <font>
+            <Font name="System Bold" size="18.0" />
+        </font>
+    </Label>
+    <Label layoutX="19.0" layoutY="197.0" prefHeight="27.0" prefWidth="70.0" text="PHONE">
+        <font>
+            <Font name="System Bold" size="18.0" />
+        </font>
+    </Label>
+    <Label layoutX="31.0" layoutY="347.0" text="ROLE">
+        <font>
+            <Font name="System Bold" size="18.0" />
+        </font>
+    </Label>
+    <Label layoutX="8.0" layoutY="392.0" text="PASSWORED">
+        <font>
+            <Font name="System Bold" size="18.0" />
+        </font>
+    </Label>
+    <ImageView fitHeight="127.0" fitWidth="111.0" layoutX="720.0" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@logo.png" />
+        </image>
+    </ImageView>
+</children>
+</AnchorPane>

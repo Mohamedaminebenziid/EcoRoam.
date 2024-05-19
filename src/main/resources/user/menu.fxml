@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="tn.esprit.controller.user.Menu"
+            prefHeight="400.0" prefWidth="600.0" stylesheets="Login.css">
+
+<children>
+    <VBox prefHeight="45.0" prefWidth="250.0">
+        <children>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+
+                </image>
+            </ImageView>
+            <Button fx:id="addmenu" mnemonicParsing="false" onAction="#addmenu" text="add user">
+                <font>
+                    <Font name="Georgia Bold" size="18.0" />
+                </font>
+            </Button>
+        </children>
+    </VBox>
+    <VBox layoutY="73.0" prefHeight="45.0" prefWidth="250.0">
+        <children>
+            <Button fx:id="affichermenu" mnemonicParsing="false" onAction="#affichermenu" prefHeight="30.0" prefWidth="106.0" text="List user">
+                <font>
+                    <Font name="Georgia Bold" size="18.0" />
+                </font>
+            </Button>
+        </children>
+    </VBox>
+    <VBox layoutY="126.0" prefHeight="45.0" prefWidth="250.0">
+        <children>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../../../../../Desktop" />
+                </image>
+            </ImageView>
+
+        </children>
+    </VBox>
+    <Button fx:id="logout" layoutX="1193.0" layoutY="32.0" mnemonicParsing="false" onAction="#logout" text="LOGOUT" textFill="#252323">
+        <font>
+            <Font name="Georgia Bold" size="18.0" />
+        </font>
+    </Button>
+</children>
+</AnchorPane>

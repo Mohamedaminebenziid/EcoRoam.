@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="card_form" prefHeight="193.0" prefWidth="255.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controller.destination.destinationcard">
+   <children>
+      <BorderPane prefHeight="229.0" prefWidth="294.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <StackPane onMouseClicked="#handleCardClick" prefHeight="229.0" prefWidth="294.0" style="-fx-background-color: #F0BE86; -fx-background-radius: 15;">
+               <children>
+                  <!-- Image -->
+                  <ImageView fx:id="dest_photo" fitHeight="139.0" fitWidth="234.0" onMouseClicked="#handleImageClick" pickOnBounds="true" preserveRatio="true" StackPane.alignment="BOTTOM_CENTER">
+                     <StackPane.margin>
+                        <Insets bottom="10.0" />
+                     </StackPane.margin></ImageView>
+                  <!-- Card Content -->
+                  <VBox alignment="TOP_LEFT" prefHeight="200.0" prefWidth="267.0" style="-fx-padding: 10;">
+                     <children>
+                        <!-- Destination Name -->
+                        <Label fx:id="dest_name" contentDisplay="CENTER" onMouseClicked="#handleNameClick" text="Destination">
+                           <font>
+                              <Font name="Arial Black" size="18.0" />
+                           </font>
+                        </Label>
+                        <!-- Price -->
+                        <HBox alignment="CENTER_LEFT" spacing="5" style="-fx-background-color: #DAAB3A; -fx-background-radius: 5;">
+                           <children>
+                              <Label text="Price: " textFill="#1a1233">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="dest_price" text="50D" textFill="#1a1233">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </StackPane>
+         </center>
+         <!-- Border -->
+         <bottom>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="1.0" stroke="#143c7b" strokeWidth="2.0" />
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

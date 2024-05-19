@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="446.0" prefWidth="628.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controller.certificate.CertificateTable">
+   <children>
+      <TableView fx:id="certificatetableview" layoutX="71.0" layoutY="37.0" prefHeight="291.0" prefWidth="450.0">
+        <columns>
+          <TableColumn fx:id="certificateid" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="namecolnn" prefWidth="75.0" text="NAME" />
+            <TableColumn fx:id="titlecolnn" prefWidth="75.0" text="TITLE" />
+            <TableColumn fx:id="datecolnn" prefWidth="75.0" text="DATE" />
+            <TableColumn fx:id="signaturecolnn" prefWidth="75.0" text="SIGNATURE" />
+            <TableColumn fx:id="courseidTF" prefWidth="75.0" text="Course ID" />
+        </columns>
+      </TableView>
+      <Button layoutX="268.0" layoutY="353.0" mnemonicParsing="false" onAction="#addcertificate" prefHeight="40.0" prefWidth="66.0" text="Add" />
+   </children>
+</AnchorPane>

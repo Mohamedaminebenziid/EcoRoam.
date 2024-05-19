@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="FrontOfficeeve" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="424.0" minWidth="706.0" prefHeight="600.0" prefWidth="706.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controller.Event.FrontEvent">
+    <left>
+        <VBox prefHeight="736.0" prefWidth="0.0" BorderPane.alignment="CENTER" />
+    </left>
+    <center>
+        <VBox prefHeight="820.0" prefWidth="1550.0" BorderPane.alignment="CENTER">
+
+            <children>
+                <HBox alignment="CENTER_RIGHT" prefHeight="127.0" prefWidth="1342.0" spacing="20.0" style="-fx-background-color: #ecebeb;" styleClass="search-container" />
+                <Label alignment="CENTER" prefHeight="32.0" prefWidth="1575.0" text="Events" textFill="#d47b07">
+                    <font>
+                        <Font name="Elephant" size="24.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets top="30.0" />
+                    </VBox.margin>
+                </Label>
+                <ScrollPane prefHeight="638.0" prefWidth="502.0" VBox.vgrow="ALWAYS">
+                    <content>
+                        <HBox fx:id="BoxAct" alignment="CENTER_LEFT" prefHeight="622.0" prefWidth="3080.0" spacing="20.0" />
+                    </content>
+                </ScrollPane>
+            </children>
+        </VBox>
+    </center>
+    <top>
+        <!-- Header -->
+        <VBox prefHeight="104.0" prefWidth="1392.0" spacing="10" style="-fx-background-color: #004D40; -fx-padding: 20px;">
+            <!-- Logo -->
+            <ImageView>
+                <!-- Add your logo image -->
+            </ImageView>
+            <!-- Agency Name and Slogan -->
+            <HBox spacing="20">
+                <Label style="-fx-text-fill: white; -fx-font-size: 36px;" text="Ecoroam" />
+                <Label alignment="CENTER" opacity="0.78" prefHeight="66.0" prefWidth="202.0" style="-fx-text-fill: white;" text="Explore the world sustainably!" />
+            </HBox>
+            <!-- Navigation Menu -->
+            <HBox spacing="20" style="-fx-background-color: #226D68; -fx-background-radius: 10;">
+                <Button style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 16px;" text="Home" />
+                <Button onAction="#todest" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 16px;" text="Destinations" />
+                <Button onAction="#toact" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 16px;" text="Activities" />
+                <Button onAction="#toevt" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 16px;" text="Events" />
+                <Button onAction="#tocorse" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 16px;" text="Course" />
+                <Button onAction="#toshop" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 16px;" text="Shop" />
+                <Button onAction="#toforum" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 16px;" text="Forum" />
+            </HBox>
+        </VBox>
+    </top>
+
+
+</BorderPane>

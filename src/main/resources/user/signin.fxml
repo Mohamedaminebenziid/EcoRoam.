@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="900.0" stylesheets="Login.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controller.user.signin">
+
+
+    <children>
+        <TextField fx:id="usereamiltextfiled" layoutX="141.0" layoutY="156.0" prefHeight="40.0" prefWidth="492.0" promptText="usereamil" />
+        <TextField fx:id="usernametextfiled" layoutX="137.0" layoutY="212.0" prefHeight="40.0" prefWidth="501.0" promptText="username" />
+        <TextField fx:id="userphonetextfiled" layoutX="141.0" layoutY="277.0" prefHeight="40.0" prefWidth="501.0" promptText="userphone" />
+        <TextField fx:id="userpasswordtextfiled" layoutX="141.0" layoutY="338.0" prefHeight="40.0" prefWidth="517.0" promptText="password" />
+        <Label layoutX="23.0" layoutY="163.0" prefHeight="23.0" prefWidth="83.0" text="EMAIL">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="22.0" layoutY="218.0" prefHeight="27.0" prefWidth="61.0" text="NAME">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="22.0" layoutY="284.0" prefHeight="27.0" prefWidth="70.0" text="PHONE">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="23.0" layoutY="344.0" text="PASSWORD">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Button fx:id="singinid" layoutX="57.0" layoutY="451.0" mnemonicParsing="false" onAction="#singuser" prefHeight="40.0" prefWidth="759.0" text="SIGN UP">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Button>
+        <Label layoutX="198.0" layoutY="32.0" prefHeight="56.0" prefWidth="732.0" text="           SIGN UP" textAlignment="CENTER" textFill="#ffffff" AnchorPane.bottomAnchor="588.0" AnchorPane.leftAnchor="198.0" AnchorPane.rightAnchor="-91.0" AnchorPane.topAnchor="32.0">
+            <font>
+                <Font name="Georgia" size="48.0" />
+            </font>
+        </Label>
+        <Button fx:id="back" layoutX="39.0" layoutY="45.0" mnemonicParsing="false" onAction="#back" text="back">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Button>
+        <ImageView fitHeight="127.0" fitWidth="111.0" layoutX="661.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@logo.png" />
+            </image>
+        </ImageView>
+
+    </children>
+</AnchorPane>

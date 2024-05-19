@@ -1,0 +1,21 @@
+.root{
+    -fx-background-image:url('/img/img11.jpg');
+    -fx-background-size:cover;
+
+}
+.btn{
+    -fx-background-color: linear-gradient(to bottom right, rgb(178, 191, 213), rgb(79, 105, 138));
+    -fx-text-fill: #fff;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+
+.btn:hover{
+    -fx-background-color: linear-gradient(to bottom right, rgb(31, 58, 107), rgb(79, 105, 138));
+}
+.text-field {
+    -fx-background-color: transparent;
+    -fx-border-width: 0 0 1 0; /* Bottom border only */
+    -fx-border-color: grey; /* Couleur de la ligne */
+}
+

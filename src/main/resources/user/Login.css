@@ -1,0 +1,11 @@
+.root {
+    -fx-background-color: #009213;
+}
+.anchor-pane {
+    -fx-background-color: #CCCCCC; /* Couleur gris */
+}
+/* styles.css */
+.button-green {
+    -fx-background-color: #CCCCCC; /* Couleur verte */
+    -fx-text-fill: white; /* Couleur du texte en blanc */
+}

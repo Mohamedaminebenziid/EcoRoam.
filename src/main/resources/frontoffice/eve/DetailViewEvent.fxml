@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="568.0" prefWidth="774.0" style="-fx-background-color: #f4f4f4; -fx-padding: 20px;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controller.Event.DetailViewEvent">
+
+    <!-- Label for Name -->
+    <Label layoutX="75.0" layoutY="76.0" style="-fx-font-size: 18px; -fx-text-fill: #333333;" text="Name:" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="76.0" />
+
+    <!-- Label for Description -->
+    <Label layoutX="75.0" layoutY="116.0" style="-fx-font-size: 18px; -fx-text-fill: #333333;" text="Description:" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="116.0" />
+
+    <!-- Label for Price -->
+    <Label layoutX="75.0" layoutY="156.0" style="-fx-font-size: 18px; -fx-text-fill: #333333;" text="Price:" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="156.0" />
+    <Label layoutX="95.0" layoutY="320.0" style="-fx-font-size: 18px; -fx-text-fill: #333333;" text="Dtae:" AnchorPane.leftAnchor="95.0" AnchorPane.topAnchor="320.0" />
+
+    <!-- Label for State -->
+    <Label layoutX="75.0" layoutY="196.0" style="-fx-font-size: 18px; -fx-text-fill: #333333;" text="State:" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="196.0" />
+
+    <!-- Labels for displaying information -->
+    <Label fx:id="nameLabel" layoutX="188.0" layoutY="82.0" prefHeight="27.0" prefWidth="111.0" style="-fx-font-size: 18px; -fx-text-fill: #666666;" AnchorPane.leftAnchor="188.0" AnchorPane.topAnchor="82.0" />
+
+    <Label fx:id="descriptionLabel" layoutX="214.0" layoutY="116.0" style="-fx-font-size: 18px; -fx-text-fill: #666666;" text="yhh" AnchorPane.leftAnchor="214.0" AnchorPane.topAnchor="116.0" />
+    <Label fx:id="priceLabel" layoutX="214.0" layoutY="156.0" style="-fx-font-size: 18px; -fx-text-fill: #666666;" text="yhh" AnchorPane.leftAnchor="214.0" AnchorPane.topAnchor="156.0" />
+    <Label fx:id="dateLabel" layoutX="314.4" layoutY="366.4" prefHeight="44.0" prefWidth="322.0" style="-fx-font-size: 18px; -fx-text-fill: #666666;" text="xx" AnchorPane.leftAnchor="294.0" AnchorPane.topAnchor="346.0" />
+    <Label fx:id="stateLabel" layoutX="214.0" layoutY="196.0" style="-fx-font-size: 18px; -fx-text-fill: #666666;" text="yhh" AnchorPane.leftAnchor="214.0" AnchorPane.topAnchor="196.0" />
+    <ImageView fx:id="imageView" fitHeight="234.0" fitWidth="291.0" layoutX="82.0" layoutY="422.0" AnchorPane.leftAnchor="82.0" AnchorPane.topAnchor="422.0" />
+    <Label layoutX="75.0" layoutY="236.0" style="-fx-font-size: 18px; -fx-text-fill: #333333;" text="Activities:" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="236.0" />
+    <Label fx:id="activitiesLabel" layoutX="254.4" layoutY="276.0" prefHeight="27.0" prefWidth="366.0" style="-fx-font-size: 18px; -fx-text-fill: #666666;" AnchorPane.leftAnchor="234.0" AnchorPane.topAnchor="256.0" />
+    <Button fx:id="joinButton" layoutX="621.0" layoutY="523.0" onAction="#joinnow" prefHeight="35.0" prefWidth="118.0" text="Join Now!" AnchorPane.leftAnchor="621.0" AnchorPane.topAnchor="523.0" />
+    <Button layoutX="626.4" layoutY="662.4" onAction="#shareOnFacebook" prefHeight="35.0" prefWidth="169.0" text="Share on Facebook!" AnchorPane.leftAnchor="606.0" AnchorPane.topAnchor="642.0" />
+
+</AnchorPane>

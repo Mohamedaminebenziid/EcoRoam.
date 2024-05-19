@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="537.0" prefWidth="851.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controller.course.Coursedetails">
+    <children>
+        <BorderPane prefHeight="537.0" prefWidth="851.0">
+            <center>
+                <StackPane prefHeight="229.0" prefWidth="294.0" style="-fx-background-color: #F0BE86; -fx-background-radius: 15;">
+                    <children>
+                        <!-- Image -->
+                        <ImageView fx:id="courseImageView" fitHeight="200.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER">
+                            <StackPane.margin>
+                                <Insets bottom="10.0" />
+                            </StackPane.margin>
+                        </ImageView>
+                        <!-- Card Content -->
+                        <VBox alignment="CENTER_LEFT" prefHeight="295.0" prefWidth="494.0" spacing="10">
+                            <children>
+                                <!-- Course Name -->
+                                <Label fx:id="courseNameLabel" contentDisplay="CENTER" textFill="#1a1233" wrapText="true">
+                                    <font>
+                                        <Font name="Arial Black" size="20.0" />
+                                    </font>
+                                </Label>
+                                <!-- Course Description -->
+                                <Label fx:id="courseDescriptionLabel" textFill="#1a1233" wrapText="true">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <!-- Course Duration -->
+                                <Label fx:id="courseDurationLabel" contentDisplay="CENTER" textFill="#1a1233">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <!-- Course Difficulty -->
+                                <Label fx:id="courseDifficultyLabel" contentDisplay="CENTER" textFill="#1a1233">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <!-- Course Category -->
+                                <Label fx:id="courseCategoryLabel" contentDisplay="CENTER" textFill="#1a1233">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                            <padding>
+                                <Insets left="20.0" right="20.0" />
+                            </padding>
+                        </VBox>
+                    </children>
+                </StackPane>
+            </center>
+            <!-- Border -->
+            <bottom>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#004d40" height="1.0" stroke="WHITE" strokeWidth="2.0" />
+            </bottom>
+        </BorderPane>
+    </children>
+</AnchorPane>

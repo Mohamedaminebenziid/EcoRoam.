@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controller.reservation.ReservationUpdate">
+    <children>
+        <fx:include source="dashboardhome.fxml" />
+        <Button layoutX="532.0" layoutY="386.0" mnemonicParsing="false" onAction="#resupd" prefHeight="26.0" prefWidth="92.0" style="-fx-background-color: #000000; -fx-background-radius: 50;" text="Update" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font></Button>
+        <Label layoutX="327.0" layoutY="24.0" prefHeight="71.0" prefWidth="344.0" text="CHANGE SOMETHING IN THE RESERVATION" textFill="#100f3b">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+        <Button layoutX="634.0" layoutY="386.0" mnemonicParsing="false" onAction="#toreservationslist" prefHeight="26.0" prefWidth="92.0" style="-fx-background-color: #000000; -fx-background-radius: 50;" text="List" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Text layoutX="535.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Find Reservation" />
+        <TextField fx:id="idr" layoutX="634.0" layoutY="112.0" promptText="id" style="-fx-background-radius: 50;" />
+        <Button layoutX="804.0" layoutY="104.0" mnemonicParsing="false" onAction="#findresbyid" prefHeight="4.0" prefWidth="68.0" style="-fx-background-color: #000000; -fx-background-radius: 50;" text="Find" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </Button>
+        <Button layoutX="431.0" layoutY="386.0" mnemonicParsing="false" onAction="#resdel" prefHeight="26.0" prefWidth="92.0" style="-fx-background-color: #000000; -fx-background-radius: 50;" text="Delete" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Label fx:id="uperror" layoutX="431.0" layoutY="355.0" prefHeight="18.0" prefWidth="286.0" textFill="RED" />
+        <Label fx:id="imageURLLabel" layoutX="483.0" layoutY="150.0" prefHeight="26.0" prefWidth="150.0" />
+      <Label layoutX="275.0" layoutY="113.0" text="Start Date">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="275.0" layoutY="166.0" text="End Date">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="startdatepick" layoutX="344.0" layoutY="112.0" />
+      <DatePicker fx:id="enddatepick" layoutX="344.0" layoutY="164.0" />
+    </children>
+</AnchorPane>

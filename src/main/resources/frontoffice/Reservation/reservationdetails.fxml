@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controller.reservation.ReservationDetails">
+   <children>
+      <Label layoutX="114.0" layoutY="207.0" prefHeight="38.0" prefWidth="210.0" text="Reservation Start Date : ">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="114.0" layoutY="413.0" prefHeight="38.0" prefWidth="199.0" text="Number Of Days :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="114.0" layoutY="362.0" prefHeight="38.0" prefWidth="108.0" text="Total price :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="114.0" layoutY="312.0" prefHeight="38.0" prefWidth="108.0" text="Destination :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="114.0" layoutY="261.0" prefHeight="38.0" prefWidth="199.0" text="Reservation End Date : ">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="startdate" disable="true" layoutX="334.0" layoutY="214.0" />
+      <DatePicker fx:id="enddate" disable="true" layoutX="334.0" layoutY="267.0" />
+      <Label fx:id="destination" layoutX="330.0" layoutY="318.0" prefHeight="26.0" prefWidth="184.0" text="destination">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="totprice" layoutX="330.0" layoutY="367.0" prefHeight="26.0" prefWidth="184.0" text="totprice">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="numofdays" layoutX="330.0" layoutY="418.0" prefHeight="26.0" prefWidth="184.0" text="numofdays">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="60.0" layoutY="86.0" prefHeight="91.0" prefWidth="679.0" text="Your Reservation Details  : Print or Scan">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <Button layoutX="214.0" layoutY="488.0" mnemonicParsing="false" onAction="#printpdf" prefHeight="62.0" prefWidth="239.0" style="-fx-background-color: #18534F; -fx-background-radius: 20;" text="PRINT" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="qrCodeImageView" fitHeight="150.0" fitWidth="200.0" layoutX="521.0" layoutY="432.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>
